@@ -1,0 +1,11 @@
+{
+  "name": "hash-miner",
+  "version": "1.0.0",
+  "main": "miner.js",
+  "scripts": {
+    "start": "node miner.js"
+  },
+  "dependencies": {
+    "ethers": "^6.9.0"
+  }
+}
