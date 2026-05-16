@@ -2,7 +2,7 @@
 FROM gcc:13-bookworm AS builder
 
 WORKDIR /build
-COPY solver/lean25.c .
+COPY lean25.c .
 
 # -O3 for speed, -march=native for Railway's x86-64
 RUN gcc -O3 -march=native -o lean25 lean25.c && \
@@ -20,7 +20,7 @@ COPY --from=builder /build/lean25 /app/solver/lean25
 COPY package.json .
 RUN npm install --omit=dev
 
-COPY src/ ./src/
+COPY index.js ./index.js
 
 # Env defaults (override in Railway dashboard)
 ENV NODE_ENV=production \
@@ -28,4 +28,4 @@ ENV NODE_ENV=production \
     LOG_INTERVAL=5 \
     MAX_GAS_GWEI=30
 
-CMD ["node", "src/index.js"]
+CMD ["node", "index.js"]

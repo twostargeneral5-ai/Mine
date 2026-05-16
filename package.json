@@ -2,11 +2,11 @@
   "name": "hash256-v2-miner",
   "version": "1.0.0",
   "description": "Hash256 V2 headless miner – Lean Cuckoo Cycle 25",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "build:solver": "gcc -O3 -o solver/lean25 solver/lean25.c",
-    "dev": "npm run build:solver && node src/index.js"
+    "start": "node index.js",
+    "build:solver": "gcc -O3 -o solver/lean25 lean25.c",
+    "dev": "npm run build:solver && node index.js"
   },
   "dependencies": {
     "ethers": "^6.13.0"
